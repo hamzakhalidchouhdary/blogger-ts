@@ -1,0 +1,16 @@
+{
+  "all": true,
+  "check-coverage": false,
+  "excludeNodeModules": true,
+  "include": [
+    "src/app/**"
+  ],
+  "exclude": [
+    "src/tests/**",
+    "src/db/**"
+  ],
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
+}

@@ -1,0 +1,6 @@
+node_modules
+.env
+todos.todo
+src/db/database_dev.sqlite
+src/db/database_test.sqlite
+.nyc_output
