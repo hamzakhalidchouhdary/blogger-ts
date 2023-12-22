@@ -35,7 +35,7 @@ class User implements UserDetails {
     this.role = userDetails.role || "";
   }
 
-  const isCommentOwner = async (commentId: NumberOrNull) => {
+  isCommentOwner = async (commentId: NumberOrNull) => {
     const commentDetails = await CommentModel.getById(commentId);
     return commentDetails.createdBy == this.id;
   };
