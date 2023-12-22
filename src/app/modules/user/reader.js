@@ -1,25 +1,25 @@
 const ERROR_TEXT = require("../../../utils/constants/errorText");
 const HTTP_STATUS = require("../../../utils/constants/httpStatus");
-const User = require("./user");
+const User = require("./user.ts");
 
-function Reader(userDetails) {
-  User.call(this, userDetails);
+class Reader extends User {
+  constructor(userDetails) {
+    super(userDetails);
+    this.role = 'reader';
+  };
 
-  this.createArticle = function () {
+  createArticle = function () {
     throw Object({
       message: ERROR_TEXT.PERMISSIONS.CREATE.ARTICLE,
       status: HTTP_STATUS.UNAUTHORIZED,
     });
   };
-  this.updateArticle = function () {
+  updateArticle = function () {
     throw Object({
       message: ERROR_TEXT.PERMISSIONS.UPDATE.ARTICLE,
       status: HTTP_STATUS.UNAUTHORIZED,
     });
   };
 }
-
-Reader.prototype = new User();
-Reader.prototype.role = "reader";
 
 module.exports = Reader;

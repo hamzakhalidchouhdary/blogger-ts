@@ -1,10 +1,10 @@
-const User = require("./user");
+const User = require("./user.ts");
 
-function Manager(userDetails) {
-  User.call(this, userDetails);
+class Manager extends User {
+  constructor(userDetails) {
+    super(userDetails);
+    this.role = 'manager';
+  };
 }
-
-Manager.prototype = new User();
-Manager.prototype.role = "manager";
 
 module.exports = Manager;
