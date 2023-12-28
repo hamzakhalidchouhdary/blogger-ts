@@ -35,7 +35,7 @@ class User implements UserDetails {
     this.role = userDetails.role || "";
   }
 
-  isCommentOwner = async (commentId: NumberOrNull) => {
+  isCommentOwner: Function = async (commentId: NumberOrNull) => {
     const commentDetails = await CommentModel.getById(commentId);
     return commentDetails.createdBy == this.id;
   };
@@ -92,7 +92,7 @@ class User implements UserDetails {
 
     return CommentModel.modify(content, commentId, this.id);
   };
-  deleteComment = async  (commentId: NumberOrNull = null) => {
+  deleteComment: Function = async  (commentId: NumberOrNull = null) => {
     if (!(await this.isCommentOwner(commentId)))
       throw Object({
         message: ERROR_TEXT.NOT_A_OWNER,
@@ -101,10 +101,10 @@ class User implements UserDetails {
 
     return CommentModel.remove(commentId, this.id);
   };
-  viewArticleComments = async function (articleId: number) {
+  viewArticleComments: Function = async function (articleId: number) {
     return CommentModel.getAllByArticleId(articleId);
   };
-  getAllArticles = async  () => {
+  getAllArticles: Function = async  () => {
     return ArticleModel.findByAuthorId(this.id);
   };
 }
