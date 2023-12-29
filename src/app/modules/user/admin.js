@@ -6,8 +6,8 @@ const _ = require("lodash");
 class Admin extends User {
   constructor(userDetails) {
     super(userDetails);
-    this.role = 'admin';
-  };
+    this.role = "admin";
+  }
 
   createUser = async function (_userDetails) {
     return UserModel.new(_userDetails);

@@ -5,8 +5,8 @@ const User = require("./user.ts");
 class Reader extends User {
   constructor(userDetails) {
     super(userDetails);
-    this.role = 'reader';
-  };
+    this.role = "reader";
+  }
 
   createArticle = function () {
     throw Object({
