@@ -2,7 +2,7 @@ const HTTP_STATUS = require("../../../utils/constants/httpStatus");
 const ArticleModel = require("../../models").Article;
 const CommentModel = require("../../models").Comment;
 const UserModel = require("../../models").User;
-const _ = require("lodash");
+import _ from "lodash";
 const ERROR_TEXT = require("../../../utils/constants/errorText");
 
 type NumberOrNull = number | null
