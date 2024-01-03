@@ -1,20 +1,21 @@
 const ERROR_TEXT = require("../../../utils/constants/errorText");
 const HTTP_STATUS = require("../../../utils/constants/httpStatus");
-const User = require("./user.ts");
+const User = require("./user");
+import _ from "lodash"
 
 class Reader extends User {
-  constructor(userDetails) {
+  constructor(userDetails: any) {
     super(userDetails);
     this.role = "reader";
   }
 
-  createArticle = function () {
+  createArticle: Function = function () {
     throw Object({
       message: ERROR_TEXT.PERMISSIONS.CREATE.ARTICLE,
       status: HTTP_STATUS.UNAUTHORIZED,
     });
   };
-  updateArticle = function () {
+  updateArticle: Function = function () {
     throw Object({
       message: ERROR_TEXT.PERMISSIONS.UPDATE.ARTICLE,
       status: HTTP_STATUS.UNAUTHORIZED,
