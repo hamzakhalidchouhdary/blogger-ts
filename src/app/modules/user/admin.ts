@@ -1,18 +1,18 @@
 const User = require("./user.ts");
 const UserModel = require("../../models").User;
 const ArticleModel = require("../../models").Article;
-import _ from "lodash";
+import { UserDetails } from ".";
 
 class Admin extends User {
-  constructor(userDetails: any) {
+  constructor(userDetails: UserDetails) {
     super(userDetails);
     this.role = "admin";
   }
 
-  createUser: Function = async function (_userDetails: any) {
+  createUser: Function = async function (_userDetails: UserDetails) {
     return UserModel.new(_userDetails);
   };
-  updateUser: Function = async function (_userDetails: any, userId: number) {
+  updateUser: Function = async function (_userDetails: UserDetails, userId: number) {
     return UserModel.modify(_userDetails, userId);
   };
   deleteUser: Function = async function (userId: number) {

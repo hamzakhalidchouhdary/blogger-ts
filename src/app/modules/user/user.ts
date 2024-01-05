@@ -4,21 +4,7 @@ const CommentModel = require("../../models").Comment;
 const UserModel = require("../../models").User;
 import _ from "lodash";
 const ERROR_TEXT = require("../../../utils/constants/errorText");
-
-type NumberOrNull = number | null
-
-interface UserDetails {
-  id: NumberOrNull,
-  firstName: string,
-  lastName: string,
-  username: string,
-  role: string
-}
-
-interface Error {
-  message: string,
-  status: number
-}
+import { UserDetails, NumberOrNull, Error } from ".";
 
 class User implements UserDetails {
   id: NumberOrNull;
