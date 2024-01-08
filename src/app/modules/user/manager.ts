@@ -1,5 +1,5 @@
 const User = require("./user.ts");
-import { UserDetails } from ".";
+import { UserDetails } from "../../../utils/common/interfaces";
 
 
 class Manager extends User {

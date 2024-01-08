@@ -8,21 +8,6 @@ const Manager = require("./manager");
 const Reader = require("./reader");
 import _ from "lodash";
 
-export type NumberOrNull = number | null
-
-export interface UserDetails {
-  id: NumberOrNull,
-  firstName: string,
-  lastName: string,
-  username: string,
-  role: string
-}
-
-export interface Error {
-  message: string,
-  status: number
-}
-
 module.exports = {
   getUser: async function (userId: number): Promise<typeof User> {
     const userDetails = await UserModel.findById(userId);

@@ -1,7 +1,7 @@
 const ERROR_TEXT = require("../../../utils/constants/errorText");
 const HTTP_STATUS = require("../../../utils/constants/httpStatus");
 const User = require("./user");
-import { UserDetails, Error } from ".";
+import { UserDetails, Error } from "../../../utils/common/interfaces";
 
 class Reader extends User {
   constructor(userDetails: UserDetails) {

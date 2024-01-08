@@ -1,7 +1,7 @@
 const User = require("./user.ts");
 const UserModel = require("../../models").User;
 const ArticleModel = require("../../models").Article;
-import { UserDetails } from ".";
+import { UserDetails } from "../../../utils/common/interfaces";
 
 class Admin extends User {
   constructor(userDetails: UserDetails) {
