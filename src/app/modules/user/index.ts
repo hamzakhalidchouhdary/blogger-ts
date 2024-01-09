@@ -6,11 +6,11 @@ const Admin = require("./admin");
 const User = require("./user");
 const Manager = require("./manager");
 const Reader = require("./reader");
-import _ from "lodash";
+import { UserDetails } from "../../../utils/common/interfaces";
 
 module.exports = {
   getUser: async function (userId: number): Promise<typeof User> {
-    const userDetails = await UserModel.findById(userId);
+    const userDetails: UserDetails = await UserModel.findById(userId);
     if (!userDetails)
       throw Object({
         message: ERROR_TEXT.NO_USER,
