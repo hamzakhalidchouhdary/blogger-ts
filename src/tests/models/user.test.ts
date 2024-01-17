@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 const { expect } = require("chai");
 const { faker } = require("@faker-js/faker");
 const ERROR_TEXT = require("../../utils/constants/errorText");

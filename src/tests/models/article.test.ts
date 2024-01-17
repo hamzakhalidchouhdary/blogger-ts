@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 const { expect } = require("chai");
 const ERROR_TEXT = require("../../utils/constants/errorText");
 const UserFixtures = require("../fixtures/user");

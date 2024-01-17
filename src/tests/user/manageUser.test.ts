@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 const app = require("../../app/index");
 const chai = require("chai");
 const chaiHttp = require("chai-http");

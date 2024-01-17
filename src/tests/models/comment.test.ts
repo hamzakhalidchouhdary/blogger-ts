@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 const { expect } = require("chai");
 const CommentModel = require("../../app/models").Comment;
 const ERROR_TEXT = require("../../utils/constants/errorText");

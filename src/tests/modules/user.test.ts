@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 const { expect } = require("chai");
 const UserModule = require("../../app/modules/user");
 const USER_ROLES = require("../../utils/constants/userRoles");
