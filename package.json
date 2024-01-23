@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "NODE_ENV=test npm run db:migrate",
-    "test": "NODE_ENV=test nyc mocha ./src/tests/*/**.js --exit",
+    "test": "NODE_ENV=test nyc mocha ./src/tests/*/**.ts --exit",
     "posttest": "NODE_ENV=development rm ./src/db/database_test.sqlite",
     "start": "node ./src/app/index.js",
     "db:model:create": "npx sequelize model:generate --name $npm_config_name --attributes name:STRING",
@@ -32,8 +32,11 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "@types/express": "^4.17.21",
+    "@types/express": "^4.17.13",
     "@types/lodash": "^4.14.202",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^17.0.21",
+    "@types/express-serve-static-core": "^4.17.28",
     "chai": "^4.3.7",
     "chai-http": "^4.3.0",
     "mocha": "^9.2.2",
