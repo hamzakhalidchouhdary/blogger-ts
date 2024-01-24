@@ -1,3 +1,4 @@
+import { Router } from "express";
 const router = require("express").Router();
 const signup = require("./signup");
 const login = require("./login");

@@ -1,3 +1,4 @@
+import { Router } from "express";
 const HTTP_STATUS = require("../../../utils/constants/httpStatus");
 const router = require("express").Router();
 const ArticlePostService = require("../../apis/articlePostService");

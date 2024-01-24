@@ -1,10 +1,13 @@
+import { Response, Request, NextFunction } from "express";
+
 const { verifyJWT } = require("../../../../utils/common/auth");
 const ServiceResponse = require("../../../../utils/common/serviceResponse");
 const ERROR_TEXT = require("../../../../utils/constants/errorText");
 const HTTP_STATUS = require("../../../../utils/constants/httpStatus");
 const UserModule = require("../../../modules/user");
+import {User} from "../../../modules/user/user";
 
-const authorizeUser = async function (req, res, next) {
+const authorizeUser = async function (req: Request, res: Response, next: NextFunction) {
   try {
     if (!req.headers.authorization)
       throw Object({
@@ -18,7 +21,8 @@ const authorizeUser = async function (req, res, next) {
         status: HTTP_STATUS.UNAUTHORIZED,
       });
     const { userId } = await verifyJWT(token);
-    req.user = await UserModule.getUser(userId);
+    const user: User = await UserModule.getUser(userId);
+    req.user = user;
     next();
   } catch (err) {
     return next(err);
